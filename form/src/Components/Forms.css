@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    border:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.forms{
+    display:flex;
+    height:1000px;
+    width:1000px;
+    flex-direction: column;
+background-color: antiquewhite;
+justify-content: center;
+align-items: center;
+margin: 100px;
+
+}
+    .items{
+   
+    height: fit-content;
+    margin:10px;
+  border: 1px solid;
+    }
+ input{
+    width:500px;
+ }
+
+ .Success{
+    background-color:yellow;
+    height: 100px;
+    width:1000px;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    padding:30px;
+ }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import React from "react";
+import './Forms.css'
 function Form(){
 const [formData, setFormData]=useState({firstName:"",lastName:"",email:"",phNo:""})
 const [errors,setError]=useState({});
@@ -44,12 +45,13 @@ const validate = (values) => {
     return(
         
         <div className="form">
-{Object.keys(errors).length===0 && submitForm ?<div>Submitted succesfully</div>:null}
+{Object.keys(errors).length===0 && submitForm ?<div className="Success"><h1>Submitted succesfully</h1></div>:null}
         <form onSubmit={handleSubmit}>
-            <div>
-
-
-            <input
+          <div className="forms">
+          <div className="items"><h3>REGISTRATION FORM</h3></div>
+            
+            <div className="items">
+            <input className="firstName"
             type="text"
             name="firstName"
             placeholder="First Name"
@@ -58,9 +60,9 @@ const validate = (values) => {
             />
             {errors.firstName&&<p style={{color:"red"}}>{errors.firstName}</p>}
             </div>
-            <div>
+            <div className="items">
 
-           <input
+           <input className="lastName"
             type="text"
             name="lastName"
             placeholder="Last Name"
@@ -69,9 +71,9 @@ const validate = (values) => {
             />
             {errors.lastName&&<p style={{color:"red"}}>{errors.lastName}</p>}
             </div>
-            <div>
+            <div className="items">
 
-            <input
+            <input className="email"
             type="email"
             name="email"
             placeholder="Email"
@@ -80,9 +82,9 @@ const validate = (values) => {
             />
             {errors.email && <p style={{color:"red"}}>{errors.email}</p>}
             </div>
-         <div>
+         <div className="items">
 
-            <input              
+            <input className="phNo"          
             type="number"
             name="phNo"
             placeholder="Phone No"
@@ -91,7 +93,11 @@ const validate = (values) => {
             />
             {errors.phNo && <p style={{color:"red"}}>{errors.phNo}</p>}
             </div>
+            <div className="items">
+            
             <button type="submit">Submit</button>
+            </div>
+            </div>
         </form>
         </div>
     )
